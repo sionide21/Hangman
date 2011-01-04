@@ -6,7 +6,7 @@ spec = Gem::Specification.new do |s|
   s.version     = '0.0.1'
   s.author      = 'Ben Olive'
   s.email       = 'ben.olive@gatech.edu'
-  s.homepage    = 'http://www.moosen.net'
+  s.homepage    = 'http://github.com/sionide21/Hangman'
   s.platform    = Gem::Platform::RUBY
   s.required_ruby_version = '>=1.9'
   s.files       = Dir['{bin,lib}/**/**']
