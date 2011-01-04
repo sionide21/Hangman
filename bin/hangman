@@ -1,0 +1,31 @@
+#! /usr/bin/env ruby
+
+require 'hangman'
+
+# This works on OSX and Ubuntu
+# TODO add option to specify
+wordfile = "/usr/share/dict/words"
+
+if ARGV.size != 1 and ARGV.size != 2
+  $stderr.puts "Usage: #{$0} <clue> [wrong letters]"
+  $stderr.puts "\t Where clue is the clue with unknown letters replaced by _ (example: pa__word)"
+  exit -1
+end
+
+guess = ARGV[0]
+exc = []
+exc = ARGV[1].split // if ARGV.size == 2
+
+puzzle = Hangman::Clue.new guess, exc
+
+File.open wordfile, 'r' do |file|
+  if puzzle.solve file.each_line 
+    puts "#{puzzle.possible_words.size} potential words"
+    if puzzle.possible_words.size < 10
+      puts puzzle.possible_words
+    end
+    puts "Guess: #{puzzle.guesses.first}"
+  else
+    puts "No guesses!"
+  end
+end
