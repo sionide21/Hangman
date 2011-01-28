@@ -3,7 +3,7 @@ require 'rake/gempackagetask'
 spec = Gem::Specification.new do |s|
   s.name        = 'hangman'
   s.summary     = 'Solve hangman puzzles'
-  s.version     = '0.0.1'
+  s.version     = '0.1.1'
   s.author      = 'Ben Olive'
   s.email       = 'ben.olive@gatech.edu'
   s.homepage    = 'http://github.com/sionide21/Hangman'
